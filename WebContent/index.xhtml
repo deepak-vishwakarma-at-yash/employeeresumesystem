@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css"></link>
+	<title>Login</title>
+
+
+
+</h:head>
+<h:body>
+	<div class="outerwrapper">
+
+	<div class="border">
+
+		<div class="wrapper">
+
+			<div class="header">
+				<table style="text-align: center; width: 100%;">
+					<tr>
+						<td><h3>Employee Information System</h3></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="login">
+				<h:form prependId="false">
+
+					<table style="height: 150px; width: 410px; text-align: center;">
+						
+						<tr>
+							<td colspan="2" align="center" style="color : red;">#{param.error}</td>
+						</tr>
+						<tr>
+							<td>User Name</td>
+							<td><h:inputText id="username" required="true"
+									requiredMessage="Please enter user name" value="#{userBean.name}"></h:inputText></td>
+
+						</tr>
+
+						<tr>
+							<td colspan="2"><h:message style="color:red;" for="username"></h:message></td>
+						</tr>
+
+
+						<tr>
+							<td>Password</td>
+							<td><h:inputSecret id="password" required="true"
+									requiredMessage="Please enter password" value="#{userBean.password}"></h:inputSecret></td>
+
+						</tr>
+
+						<tr>
+							<td colspan="2"><h:message style="color:red;" for="password"></h:message></td>
+						</tr>
+
+						<tr>
+							<td colspan="2" align="center"><h:commandButton
+									class="btn btn-primary" type="submit" value="Login" action="#{userBean.authenticate}"></h:commandButton></td>
+						</tr>
+
+					</table>
+
+
+				</h:form>
+			</div>
+
+		</div>
+		
+		</div>
+	</div>
+</h:body>
+</html>
